@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Explore — Kalaverse</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ========== COLOR SYSTEM (SAME AS INDEX) ========== */
+:root{
+  --bg:#FAF7F0;
+  --card:#ffffff;
+  --text:#1f2937;
+  --muted:#6b6b6b;
+  --violet:#5A2D82;
+  --pink:#ec4899;
+  --orange:#fb923c;
+  --glow:rgba(90,45,130,.45);
+}
+
+body.dark{
+  --bg:#0f0f14;
+  --card:#1c1c24;
+  --text:#f3f4f6;
+  --muted:#a1a1aa;
+  --glow:rgba(159,122,234,.6);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Inter,system-ui;
+}
+
+body{
+  background:linear-gradient(180deg,var(--bg),#0000);
+  color:var(--text);
+  transition:.6s ease;
+}
+
+/* ========== HEADER ========== */
+header{
+  padding:26px 45px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:900;
+  background:linear-gradient(90deg,var(--violet),var(--pink),var(--orange));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.back{
+  text-decoration:none;
+  font-weight:700;
+  color:var(--muted);
+}
+
+/* ========== THEME SWITCH (SAME BUTTON) ========== */
+.theme-switch{
+  width:66px;
+  height:66px;
+  border-radius:50%;
+  background:conic-gradient(
+    from 0deg,
+    var(--violet),
+    var(--pink),
+    var(--orange),
+    var(--violet)
+  );
+  padding:4px;
+  cursor:pointer;
+  box-shadow:0 0 40px var(--glow);
+  transition:.6s ease;
+}
+
+.theme-switch:hover{
+  transform:rotate(35deg) scale(1.12);
+}
+
+.orb{
+  width:100%;
+  height:100%;
+  background:var(--card);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.icon{
+  position:absolute;
+  font-size:22px;
+  transition:.6s ease;
+}
+
+.sun{opacity:1;}
+.moon{opacity:0;}
+
+body.dark .sun{
+  opacity:0;
+  transform:rotate(-180deg) scale(.4);
+}
+body.dark .moon{opacity:1;}
+
+/* ========== PAGE TITLE ========== */
+.page-title{
+  padding:60px 45px 30px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.page-title h1{
+  font-size:44px;
+}
+
+.page-title span{
+  background:linear-gradient(90deg,var(--violet),var(--pink));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.page-title p{
+  margin-top:12px;
+  max-width:620px;
+  color:var(--muted);
+}
+
+/* ========== PAINTING GRID ========== */
+.section{
+  padding:40px 45px 80px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:26px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,.18);
+  transition:.5s ease;
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.03);
+}
+
+.card img{
+  width:100%;
+  height:260px;
+  object-fit:contain;
+  background:#eee;
+}
+
+body.dark .card img{
+  background:#111;
+}
+
+.meta{
+  padding:22px;
+}
+
+.type{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--muted);
+}
+
+.meta h3{
+  margin:10px 0 6px;
+  font-size:18px;
+  background:linear-gradient(90deg,var(--violet),var(--pink));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.meta p{
+  font-size:14px;
+  color:var(--muted);
+}
+
+.price{
+  margin-top:12px;
+  font-weight:800;
+  color:var(--violet);
+}
+
+/* ========== FOOTER ========== */
+footer{
+  padding:30px;
+  text-align:center;
+  font-size:14px;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="kala.html" class="back">← Home</a>
+  <div class="logo">Kalaverse</div>
+
+  <div class="theme-switch" id="themeToggle">
+    <div class="orb">
+      <span class="icon sun">☀</span>
+      <span class="icon moon">☾</span>
+    </div>
+  </div>
+</header>
+
+<section class="page-title">
+  <h1>Explore <span>Paintings & Designs</span></h1>
+  <p>
+    Handcrafted artworks by Indian artists — acrylic,
+    oil, watercolor, abstract and digital creations.
+  </p>
+</section>
+
+<section class="section">
+  <div class="grid">
+
+    <!-- CARD -->
+    <div class="card">
+      <img src="C:\css_project\acy.jpg">
+      <div class="meta">
+        <div class="type">Acrylic</div>
+        <h3>Silent Mood</h3>
+        <p>Emotional abstract expression</p>
+        <div class="price">₹3,200</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="C:\css_project\oil.jpg">
+      <div class="meta">
+        <div class="type">Oil Painting</div>
+        <h3>Golden Fields</h3>
+        <p>Warm rural landscape</p>
+        <div class="price">₹6,500</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="C:\css_project\water.jpg">
+      <div class="meta">
+        <div class="type">Watercolor</div>
+        <h3>Rain Memory</h3>
+        <p>Soft monsoon tones</p>
+        <div class="price">₹2,400</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="C:\css_project\abs1.jpg">
+      <div class="meta">
+        <div class="type">Abstract</div>
+        <h3>Inner Chaos</h3>
+        <p>Modern emotional art</p>
+        <div class="price">₹4,800</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="C:\css_project\abs2.jpg">
+      <div class="meta">
+        <div class="type">Abstract</div>
+        <h3>Inner Chaos</h3>
+        <p>Modern emotional art</p>
+        <div class="price">₹4,800</div>
+      </div>
+    </div>
+<div class="card">
+      <img src="C:\css_project\abs3.jpg">
+      <div class="meta">
+        <div class="type">Abstract</div>
+        <h3>Inner Chaos</h3>
+        <p>Modern emotional art</p>
+        <div class="price">₹4,800</div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<footer>
+© 2025 Kalaverse — Explore. Feel. Collect.
+</footer>
+
+<script>
+const toggle = document.getElementById("themeToggle");
+
+/* Sync theme from index */
+if(localStorage.getItem("theme")==="dark"){
+  document.body.classList.add("dark");
+}
+
+/* Toggle + sync */
+toggle.onclick = ()=>{
+  document.body.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.body.classList.contains("dark") ? "dark" : "light"
+  );
+};
+</script>
+
+</body>
+</html>
